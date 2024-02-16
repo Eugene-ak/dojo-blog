@@ -16,21 +16,23 @@ const Create = () => {
 
     setBlog({ title, body, author });
     try {
-      const postData = await fetch("http://localhost:8000/blogs", {
+      const postData = await fetch("https://jsonplaceholder.typicode.com/posts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(blog)
       });
       setIsLoading(false);
       const response = await postData.json();
+      alert("New blog created");
       console.log(response);
     } catch (err) {
+      setIsLoading(false);
       alert(err.message);
     }
   }
 
   return (
-    <section className="create">
+    <main className="create">
       <h2>Create New Blog</h2>
       <form onSubmit={handleSubmit} method="post">
         <label>Blog title:</label>
@@ -56,7 +58,7 @@ const Create = () => {
         {isLoading ? <button disabled>Loading...</button> : <button type="submit">Create</button>}
       </form>
       {/* { (blog && <div className="feedback">New Blog Created</div>) || (error && <div className="feedback">{ error }</div>) } */}
-    </section>
+    </main>
   );
 }
 

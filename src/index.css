@@ -42,6 +42,9 @@ body {
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid rgb(219, 219, 219);
+    position: sticky;
+    top: 0;
+    background-color: rgb(253, 253, 253);
   }
 }
 
@@ -54,10 +57,12 @@ body {
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid rgb(219, 219, 219);
+    position: fixed;
+    top: 0;
   }
 }
 
-@media screen and /* (min-width: 530px) and */ (max-width: 529px) {
+@media screen and (max-width: 529px) {
   * {
     font-size: 1rem;
   }
@@ -70,6 +75,8 @@ body {
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid rgb(219, 219, 219);
+    position: fixed;
+    top: 0;
   }
 }
 
@@ -176,7 +183,7 @@ body {
   height: 5rem;
   padding: 1rem;
   border-radius: 10px;
-  border-style: ridge;
+  border-style: groove;
 }
 
 .create form button {
@@ -195,6 +202,7 @@ body {
   border: 1px solid rgb(212, 23, 102);
   background-color: white;
   color: rgb(212, 23, 102);
+  cursor: pointer;
   transition: 0.5s;
 }
 
