@@ -1,13 +1,242 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+* {
+  font-family: "Quicksand";
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 30% 30px;
+}
+
+/* Keyframes */
+@keyframes pop-up {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Navbar styles */
+@media screen and (min-width: 675px) {
+  .navbar {
+    min-width: 40rem;
+    padding: 2rem 0;
+    margin: 0 auto 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(219, 219, 219);
+  }
+}
+
+@media screen and (min-width: 530px) and (max-width: 674px) {
+  .navbar {
+    min-width: 30rem;
+    padding: 2rem 0;
+    margin: 0 auto 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(219, 219, 219);
+  }
+}
+
+@media screen and /* (min-width: 530px) and */ (max-width: 529px) {
+  * {
+    font-size: 1rem;
+  }
+
+  .navbar {
+    min-width: 20rem;
+    padding: 2rem 0;
+    margin: 0 auto 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(219, 219, 219);
+  }
+}
+
+.navbar h1 {
+  color: rgb(212, 23, 102);
+}
+
+.links {
+  display: flex;
+  gap: 1rem;
+}
+
+.links a {
+  text-decoration: none;
+}
+
+.links a:hover {
+  color: rgb(212, 23, 102);
+}
+
+.active {
+  color: rgb(212, 23, 102);
+}
+
+/* Home page styles */
+.blog-preview {
+  padding: 1rem 0;
+  margin: 0.5rem auto;
+}
+
+.blog-preview:hover {
+  box-shadow: 2px 5px 10px rgb(153, 153, 153);
+}
+
+.blog-preview a {
+  text-decoration: none;
+}
+
+.blog-preview h2 {
+  color: rgb(212, 23, 102);
+}
+
+/* Blog details page */
+.blog-detail article {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.blog-detail article h2 {
+  color: rgb(212, 23, 102);
+}
+
+.blog-detail article .delete-btn {
+  width: max-content;
+  padding: 0.8rem 1rem;
+  background-color: white;
+  color: rgb(212, 23, 102);
+  border-radius: 20px;
+  border: 1px solid rgb(212, 23, 102);
+  font-size: 1rem;
+  transition: 0.5s;
+}
+
+.blog-detail article .delete-btn:hover {
+  background-color: rgb(212, 23, 102);
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+/* Create page styles */
+.create {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.create h2 {
+  color: rgb(212, 23, 102);
+}
+
+.create form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.create form input {
+  width: 100%;
+  height: 3rem;
+  max-height: max-content;
+  padding: 1rem;
+  border-radius: 10px;
+  border-style: groove;
+}
+
+.create form textarea {
+  width: 100%;
+  height: 5rem;
+  padding: 1rem;
+  border-radius: 10px;
+  border-style: ridge;
+}
+
+.create form button {
+  margin: auto;
+  width: 8rem;
+  height: 3rem;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  background-color: rgb(212, 23, 102);
+  transition: 0.5s;
+}
+
+.create form button:hover {
+  border: 1px solid rgb(212, 23, 102);
+  background-color: white;
+  color: rgb(212, 23, 102);
+  transition: 0.5s;
+}
+
+.create form button:active {
+  color: white;
+  background-color: rgb(212, 23, 102);
+  border: none;
+}
+
+.feedback {
+  padding: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  background-color: rgb(248, 213, 227);
+  color: rgb(212, 23, 102);
+  animation-name: pop-up;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-delay: 0;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
+
+/* Not found page */
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.not-found h1 {
+  color: rgb(212, 23, 102);
+}
+
+.not-found a {
+  text-decoration: none;
+}
+
+.not-found a:hover {
+  color: rgb(212, 23, 102);
+  text-decoration: underline;
+  cursor: pointer;
 }
