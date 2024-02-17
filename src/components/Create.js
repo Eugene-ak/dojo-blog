@@ -16,7 +16,7 @@ const Create = () => {
 
     setBlog({ title, body, author });
     try {
-      const postData = await fetch("https://jsonplaceholder.typicode.com/posts", {
+      const postData = await fetch("https://dojo-blog-server.onrender.com/blogs/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(blog)

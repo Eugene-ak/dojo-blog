@@ -3,14 +3,13 @@ import useFetch from "../hooks/useFetch";
 
 // Blog detail page component
 const BlogDetail = () => {
-  const author = "JSON Placeholder API";
   const { id } = useParams();
-  const { data: blog, isPending, error } = useFetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+  const { data: blog, isPending, error } = useFetch(`https://dojo-blog-server.onrender.com/blogs/${id}`);
   const navigate = useNavigate();
 
   // Function to delete blogs and redirect to home route
   const handleDelete = () => {
-    fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+    fetch(`https://dojo-blog-server.onrender.com/blogs/${id}`, {
       method: "DELETE"
     })
       .then(() => navigate("/"));
@@ -26,7 +25,7 @@ const BlogDetail = () => {
       {/* Display blog if successful */}
       { blog && <article>
         <h2>{ blog.title }</h2>
-        <p>Written by { author }</p>
+        <p>Written by { blog.author }</p>
         <p> { blog.body }</p>
         <button className="delete-btn" onClick={handleDelete}>Delete this blog</button>
       </article> }
