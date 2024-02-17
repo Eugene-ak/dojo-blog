@@ -3,13 +3,13 @@ import useFetch from "../hooks/useFetch";
 
 // Blog detail page component
 const BlogDetail = () => {
-  const { id } = useParams();
-  const { data: blog, isPending, error } = useFetch(`https://dojo-blog-server.onrender.com/blogs/${id}`);
+  const { _id } = useParams();
+  const { data: blog, isPending, error } = useFetch(`https://dojo-blog-server.onrender.com/blogs/${_id}`);
   const navigate = useNavigate();
 
   // Function to delete blogs and redirect to home route
   const handleDelete = () => {
-    fetch(`https://dojo-blog-server.onrender.com/blogs/${id}`, {
+    fetch(`https://dojo-blog-server.onrender.com/blogs/${_id}`, {
       method: "DELETE"
     })
       .then(() => navigate("/"));

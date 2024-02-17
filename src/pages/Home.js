@@ -2,7 +2,7 @@ import BlogList from "../components/BlogList";
 import useFetch from "../hooks/useFetch";
 
 const Home = () => {
-  const { data: blogs, isPending, error } = useFetch("https://dojo-blog-server.onrender.com/blogs/");
+  const { data: blogs, isPending, error } = useFetch("https://dojo-blog-server.onrender.com/blogs");
 
   return (
     <main className="home">
